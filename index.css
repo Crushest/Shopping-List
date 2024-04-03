@@ -3,7 +3,7 @@ html, body {
     padding: 0;
     font-family: 'Rubik', sans-serif;
     background-color: #FADCD9;
-    color: #43002f;
+    color: #212427;
     user-select: none;
 }
 
@@ -20,7 +20,7 @@ img {
 }
 
 input {
-    color: #432000;
+    color: #212427;
     background-color: #F9F1F0;
     border: 0;
     padding: 15px;
@@ -43,9 +43,11 @@ button {
 }
 
 button:hover {
-    background-color: #fb7667;
+    background-color: #ff8a7d;
     cursor: pointer;
 }
+
+
 
 ul {
     list-style-type: none;
