@@ -55,16 +55,13 @@ function appendItemToShoppingListEl(item) {
     
     newEl.textContent = itemValue
     
-    newEl.addEventListener("mousedown", function() {
+    newEl.addEventListener("dblclick", function() {
         let exactLocationOfItemInDB = ref(database, `shoppingList/${itemID}`)
-        const timer = setTimeout(() => {
+
             remove(exactLocationOfItemInDB)
-        }, 1150);  
+
     })
     
-    newEl.addEventListener('mouseup', function() {
-        clearTimeout(timer);
-      });
 
     shoppingListEl.append(newEl)
 }
