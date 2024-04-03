@@ -35,7 +35,7 @@ onValue(shoppingListInDB, function(snapshot) {
             appendItemToShoppingListEl(currentItem)
         }    
     } else {
-        shoppingListEl.innerHTML = "No items here... yet"
+        shoppingListEl.innerHTML = `<li>No items here... yet</li>`
     }
 })
 
@@ -55,11 +55,16 @@ function appendItemToShoppingListEl(item) {
     
     newEl.textContent = itemValue
     
-    newEl.addEventListener("click", function() {
+    newEl.addEventListener("mousedown", function() {
         let exactLocationOfItemInDB = ref(database, `shoppingList/${itemID}`)
-        
-        remove(exactLocationOfItemInDB)
+        const timer = setTimeout(() => {
+            remove(exactLocationOfItemInDB)
+        }, 1150);  
     })
     
+    newEl.addEventListener('mouseup', function() {
+        clearTimeout(timer);
+      });
+
     shoppingListEl.append(newEl)
 }
